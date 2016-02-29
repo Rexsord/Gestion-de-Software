@@ -55,7 +55,7 @@ public class Principal extends JFrame {
 		menuPrin.addTab("Registro", null, tabRegistro, null);
 		tabRegistro.setLayout(null);
 		
-		String[] cBOptions = {"Clientes", "Empleados", "Contrato"};
+		String[] cBOptions = {"Clientes", "Empleados", "Contratos"};
 		JComboBox comboBox = new JComboBox(cBOptions);
 		comboBox.setToolTipText("Seleccione");
 		comboBox.setBounds(6, 6, 124, 39);
