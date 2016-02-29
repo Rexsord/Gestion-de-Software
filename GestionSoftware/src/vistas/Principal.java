@@ -2,14 +2,20 @@ package vistas;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.Frame;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.JTabbedPane;
+import java.awt.GridLayout;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
+import javax.swing.JMenuBar;
+import javax.swing.JComboBox;
+import javax.swing.JList;
 
 public class Principal extends JFrame {
-
-	private JPanel contentPane;
 
 	/**
 	 * Launch the application.
@@ -23,21 +29,36 @@ public class Principal extends JFrame {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
+				
 			}
 		});
+		
+		
 	}
-
+	
 	/**
 	 * Create the frame.
 	 */
 	public Principal() {
-		setTitle("Menu Principal");
+		setTitle("Gestion de Software");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		contentPane.setLayout(new BorderLayout(0, 0));
-		setContentPane(contentPane);
+		getContentPane().setLayout(new GridLayout(1, 0, 0, 0));
+		
+		JTabbedPane menuPrin = new JTabbedPane(JTabbedPane.TOP);
+		getContentPane().add(menuPrin);
+		
+		JPanel tabBuscar = new JPanel();
+		menuPrin.addTab("Buscar", null, tabBuscar, null);
+		
+		JPanel tabRegistro = new JPanel();
+		menuPrin.addTab("Registro", null, tabRegistro, null);
+		tabRegistro.setLayout(null);
+		
+		String[] cBOptions = {"Clientes", "Empleados", "Contrato"};
+		JComboBox comboBox = new JComboBox(cBOptions);
+		comboBox.setToolTipText("Seleccione");
+		comboBox.setBounds(6, 6, 124, 39);
+		tabRegistro.add(comboBox);
 	}
-
 }
