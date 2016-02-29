@@ -1,4 +1,4 @@
-package vistas;
+package datos;
 import javax.swing.*;
 import java.awt.*;
 
